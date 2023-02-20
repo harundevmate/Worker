@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+option csharp_namespace = "Worker";
+package menu;
+
+// The greeting service definition.
+service Menu {
+  // Sends a greeting
+  rpc Receiver(RequestMessageMenu) returns (ResponseMessageMenu);
+  rpc BroadCast(RequestMessageMenu) returns (ResponseMessageMenu);
+}
+
+message RequestMessageMenu
+{
+	string name = 1;
+	string body = 2;
+	bytes fileContent = 4;
+}
+
+message ResponseMessageMenu
+{
+	string name = 1;
+	string body = 2;
+}
